@@ -24,22 +24,3 @@ public struct ToneOverlayStyle {
     self.veilOpacity = veilOpacity
   }
 }
-
-public extension ToneOverlayStyle {
-    static func tinted(
-        color: Color,
-        opacity: Double,
-        desaturation: Double = 0.0,
-    dim: Double = 0.0,
-    contrast: Double = 1.0
-  ) -> ToneOverlayStyle {
-    ToneOverlayStyle(
-      desaturation: desaturation,
-      dim: dim,
-      contrast: contrast,
-      tint: color,
-      tintOpacity: opacity,
-      veilOpacity: 0.0
-    )
-  }
-}

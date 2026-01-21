@@ -31,7 +31,14 @@ private struct ToneOverlayPreviewContent: View {
       ToneOverlayPreviewRow(title: "Original", style: nil),
       ToneOverlayPreviewRow(
         title: "Tint only",
-        style: .tinted(color: .red, opacity: 0.35, desaturation: 0.0, dim: 0.0, contrast: 1.0)
+        style: ToneOverlayStyle(
+          desaturation: 0.0,
+          dim: 0.0,
+          contrast: 1.0,
+          tint: .red,
+          tintOpacity: 0.35,
+          veilOpacity: 0.0
+        )
       ),
       ToneOverlayPreviewRow(
         title: "Desaturation only",
@@ -77,17 +84,17 @@ private struct ToneOverlayPreviewContent: View {
           veilOpacity: 0.2
         )
       ),
-            ToneOverlayPreviewRow(
-                title: "Combined effects",
-                style: ToneOverlayStyle(
-                    desaturation: 0.6,
-                    dim: 0.18,
-                    contrast: 0.9,
-                    tint: .black,
-                    tintOpacity: 0.12,
-                    veilOpacity: 0.08
-                )
-            ),
+      ToneOverlayPreviewRow(
+        title: "Combined effects",
+        style: ToneOverlayStyle(
+          desaturation: 0.6,
+          dim: 0.18,
+          contrast: 0.9,
+          tint: .black,
+          tintOpacity: 0.12,
+          veilOpacity: 0.08
+        )
+      ),
     ]
   }
 
