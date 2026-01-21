@@ -77,13 +77,17 @@ Image("enemy_icon")
 The transition between active and inactive states can be animated using standard SwiftUI animation modifiers:
 
 ```swift
-Button("Toggle Effect") {
-    withAnimation {
-        isActive.toggle()
+// Example 1: Using `withAnimation` for implicit animation.
+// Assumes `isActive` is a @State var.
+VStack {
+    Image("icon")
+        .toneOverlay(isActive: isActive, style: style)
+    Button("Toggle") {
+        withAnimation { isActive.toggle() }
     }
 }
 
-// Or using .animation()
+// Example 2: Using the `.animation()` modifier for explicit animation.
 Image("icon")
     .toneOverlay(isActive: isActive, style: style)
     .animation(.easeInOut, value: isActive)
