@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ToneOverlayStyle {
+public struct ToneOverlayStyle: Sendable {
   public var desaturation: Double
   public var dim: Double
   public var contrast: Double
